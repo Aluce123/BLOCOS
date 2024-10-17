@@ -10,13 +10,14 @@ var tempo;
 var gameTime;
 var endTime
 
+
 var gameStart= "wait"
 
 function preload (){
 ruimimg=loadImage ("RUINS.png")
 bomimg=loadImage ("BONS.png")
 bonusimg=loadImage("BONUS.png")
-
+fonte=loadFont("SixtyfourConvergence-Regular.ttf")
 
 }
 
@@ -42,21 +43,26 @@ function setup() {
 function draw() {
   background ("pink")
 
+  textFont(fonte)
+
+
 if(gameStart==="wait"){
   fill("black")
   textSize(40)
 
-  text("JOGO IMPOSSIVEL", 225, 400 )
+textAlign(CENTER, CENTER)
+
+  text("JOGO IMPOSSIVEL", width/2, 400 )
   fill("black")
   textSize(25)
 
-  text("Jogue com as setas", 225, 450 )
+  text("Jogue com as setas", width/2, 450 )
   fill("black")
   textSize(25)
 
-  text("Pressione espaço para começar", 225, 500 )
+  text("Pressione espaço para começar", width/2, 500 )
   fill("black")
-  textSize(20)
+  textSize(15)
 
 if(keyDown("space")){
 gameStart="play";
@@ -75,7 +81,7 @@ text("Pontuação: "+pontuacao, 350, 720 )
 
  fill("black")
  textSize(20)
-  text("Tempo:"+gameTime, 50, 50) 
+  text("Tempo: "+gameTime, 50, 50) 
 
   bons ()
   ruins ()
@@ -124,22 +130,25 @@ text("Pontuação: "+pontuacao, 350, 720 )
 
 }else if(gameStart==="gameOver"){
 
+  textAlign(CENTER, CENTER)
+
 
   fill("black")
   textSize(20)
-  text("Pontuação: "+pontuacao, 350, 720 )
+  text("Pontuação: "+pontuacao, width/2, 720 )
  
   fill("black")
  textSize(20)
-  text("Tempo:"+endTime, 50, 50)
+  text("Tempo:"+EndTime, width/2, 50)
 
 
-  fill("blue")
+  fill("red")
   textSize(20)
-  text("FIM DE JOGO! 220,400")
+  text("FIM DE JOGO!", width/2,400)
 
-  text("Pressione espaço para tentar novamente", 200, 400 )
-  fill("black")
+
+  fill("green")
+  text("Pressione espaço para tentar novamente", width/2, 450 )
   textSize(40) // tempo acabar lá e mudar fonte destruir sprites e recomeçar
 
 if(keyDown("space")){
@@ -212,151 +221,6 @@ function bonus( ) {
 
 }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
